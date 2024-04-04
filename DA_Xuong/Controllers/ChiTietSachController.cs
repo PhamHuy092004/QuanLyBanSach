@@ -6,10 +6,17 @@ namespace DA_Xuong.Controllers
     public class ChiTietSachController : Controller
     {
         private readonly ApplicationDBContext _db;
-
-        public IActionResult Index()
+        public ChiTietSachController(ApplicationDBContext db)
         {
-            return View();
+            _db = db;
+        }
+
+        public IActionResult Index(int id)
+
+        {
+            var project = _db.SACH.FirstOrDefault(p => p.IDSACH == id);
+
+            return View(project);
         }
     }
 }
