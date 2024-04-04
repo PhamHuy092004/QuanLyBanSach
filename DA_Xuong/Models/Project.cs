@@ -1,7 +1,9 @@
-﻿namespace DA_Xuong.Models
+﻿using System.ComponentModel.DataAnnotations;
+namespace DA_Xuong.Models
 {
     public class Project
     {
+        [Key]
         public int ID_Sach { get; set; }
         public string HinhAnh { get; set; }
         public string TenSach { get; set; }

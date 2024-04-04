@@ -1,7 +1,9 @@
-﻿namespace DA_Xuong.Models
+﻿using System.ComponentModel.DataAnnotations;
+namespace DA_Xuong.Models
 {
     public class TAIKHOAN
     {
+        [Key]
         public int IDNGUOIDUNG { get; set; }
         public string TENTAIKHOAN { get; set; }
         public string MATKHAU {  get; set; }
