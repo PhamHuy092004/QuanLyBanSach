@@ -1,6 +1,7 @@
 ﻿using DA_Xuong.Database;
 using DA_Xuong.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace DA_Xuong.Controllers
@@ -8,9 +9,9 @@ namespace DA_Xuong.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly DatabaseContext _db;
+        private readonly ApplicationDBContext _db;
 
-        public HomeController(ILogger<HomeController> logger, DatabaseContext db)
+        public HomeController(ILogger<HomeController> logger, ApplicationDBContext db)
         {
             _logger = logger;
             _db = db;
@@ -18,8 +19,9 @@ namespace DA_Xuong.Controllers
         
         public IActionResult Index()
         {
-            List<SACH> sachs = new List<SACH>();
-            return View(sachs);
+            List<SACH> projects = _db.SACH.ToList();
+          
+            return View(projects);
            
         }
 
