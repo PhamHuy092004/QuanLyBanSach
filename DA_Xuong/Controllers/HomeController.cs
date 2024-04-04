@@ -1,5 +1,7 @@
-﻿using DA_Xuong.Models;
+﻿using DA_Xuong.Database;
+using DA_Xuong.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace DA_Xuong.Controllers
@@ -7,62 +9,20 @@ namespace DA_Xuong.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDBContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDBContext db)
         {
             _logger = logger;
+            _db = db;
         }
         
         public IActionResult Index()
         {
-            var projects = new List<Project>()
-            {
-                new Project()
-                {
-                    ID_Sach = 1,
-                    LoaiSach = "Tâm lý",
-                     HinhAnh = "/IMG/AnhSach/tktd.jpg",
-                    TenSach = "Thời khắc tươi đẹp",
-                    MoTa = "Tâm lí học là ngành khoa học nghiên cứu hoạt động, tinh thần và tư tưởng của con người (cụ thể đó là những cảm xúc, ý chí và hành động)",
-                    GiaSach = 199000,
-                    TacGia = "NiNa Riggs"
-
-                },
-                 new Project()
-                {
-                    ID_Sach = 2,
-                    LoaiSach = "Tâm lý",
-                    HinhAnh = "/IMG/AnhSach/tktd.jpg",
-                    TenSach = "Thời khắc tươi đẹp",
-                    MoTa = "Tâm lí học là ngành khoa học nghiên cứu hoạt động, tinh thần và tư tưởng của con người (cụ thể đó là những cảm xúc, ý chí và hành động)",
-                    GiaSach = 199000,
-                      TacGia = "NiNa Riggs"
-
-                },
-                 new Project()
-                {
-                    ID_Sach = 3,
-                    LoaiSach = "Tâm lý",
-                     HinhAnh = "/IMG/AnhSach/tktd.jpg",
-                    TenSach = "Thời khắc tươi đẹp",
-                    MoTa = "Tâm lí học là ngành khoa học nghiên cứu hoạt động, tinh thần và tư tưởng của con người (cụ thể đó là những cảm xúc, ý chí và hành động)",
-                    GiaSach = 199000,
-                      TacGia = "NiNa Riggs"
-
-                },
-                 new Project()
-                {
-                    ID_Sach = 4,
-                    LoaiSach = "Tâm lý",
-                    HinhAnh = "/IMG/AnhSach/tktd.jpg",
-                    TenSach = "Thời khắc tươi đẹp",
-                    MoTa = "Tâm lí học là ngành khoa học nghiên cứu hoạt động, tinh thần và tư tưởng của con người (cụ thể đó là những cảm xúc, ý chí và hành động)",
-                    GiaSach = 199000,  
-                     TacGia = "NiNa Riggs"
-
-                },
-            };
+            List<SACH> projects = _db.SACH.ToList();
+          
             return View(projects);
+           
         }
 
         public IActionResult Privacy()
