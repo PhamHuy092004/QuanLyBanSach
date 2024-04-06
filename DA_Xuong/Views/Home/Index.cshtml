@@ -78,6 +78,9 @@
 
     @model List<DA_Xuong.Models.SACH>
     <div class="container">
+
+    <img src="~/IMG/Frame 21.png" style="width:100%" />
+    <img src="/IMG//Rectangle 192.png" style="width:100%; margin-top:30px;margin-bottom:30px;" />
         <div class="row">
             <div class="row">
                 <div class="col-md-6"><p class="text-uppercase fw-bolder">Sách tâm lý</p></div>
@@ -89,7 +92,7 @@
             {
                 <div class="col-md-3" style="margin-top:10px">
                     <div class="project-item">
-                        <img src="~/@project.HINHANH" />
+                        <img src="@Url.Content(project.HINHANH)" />
                         <div class="project-info">
                             <p class="text-uppercase fw-bolder">@project.TIEUDE</p>
                             <p>@project.IDTACGIA</p>
@@ -121,7 +124,7 @@
             {
                 <div class="col-md-3" style="margin-top:10px">
                     <div class="project-item">
-                        <img src="~/@project.HINHANH" />
+                    <img src="@Url.Content(project.HINHANH)" />
                         <div class="project-info">
                             <p class="text-uppercase fw-bolder">@project.TIEUDE</p>
                             <p>@project.IDTACGIA</p>
