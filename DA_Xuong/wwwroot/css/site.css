@@ -156,20 +156,4 @@ body {
         transform: scale(1.05); 
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     }
-.social-icons {
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center; /* Căn giữa theo chiều dọc */
-}
 
-    .social-icons a {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        margin: 0 5px; /* Khoảng cách giữa các biểu tượng */
-    }
-
-    .social-icons img {
-        width: 100%;
-        height: auto;
-    }

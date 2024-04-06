@@ -96,17 +96,89 @@
 									</a>
 								</div>
 								<div class="icon-container">
-                                    <a href="/GioHang/Index">
-                                        <img class="icon" src="~/IMG/Shopping cart.png" alt="Shopping Cart" />
-										</a>
-									
+									<img class="icon" src="~/IMG/Shopping cart.png" alt="Shopping Cart" />
 								</div>
 								<div class="icon-container">
 
+									<!--Button Modal-->
+									<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+										Đăng nhập
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<ul class="nav nav-tabs d-flex" id="myTab" role="tablist">
+													<li class="nav-item" role="presentation">
+														<a class="nav-link active" id="product-tab" data-bs-toggle="tab" href="#product" role="tab" aria-controls="product" aria-selected="true">Đăng nhập</a>
+													</li>
+													<li class="nav-item" role="presentation">
+														<a class="nav-link" id="details-tab" data-bs-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="false">Đăng ký</a>
+													</li>
+												</ul>
+												<div class="tab-content" id="myTabContent">
+													<div class="tab-pane fade show active" id="product" role="tabpanel" aria-labelledby="product-tab">
+														<form action="/" method="post" class="container">
+															<div class="mb-3">
+																<label class="form-label">Email:</label>
+																<input type="email" name="name" value="" class="form-control" placeholder="Nhập Email" style="border-color:green; color:green" />
+															</div>
+															<div class="mb-3">
+																<label class="form-label">Mật khẩu</label>
+																<input type="password" name="name" value="" class="form-control" placeholder="Nhập mật khẩu" style="border-color:green; color:green" />
+															</div>
+															<div class="mb-3 form-check d-flex justify-content-end">
+																@* 	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+																<label class="form-check-label" for="exampleCheck1">Check me out</label> *@
+																<a href="#" class="text-decoration-none">Quên mật khẩu?</a>
+															</div>
+															<div class="mb-3 d-flex justify-content-around">
+																<button type="submit" class="btn btn-success w-50">Đăng nhập</button>
+															</div>
+														</form>
+													</div>
+													<div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
+														<form action="/" method="post" class="container">
+															<div class="mb-3">
+																<label class="form-label">Email:</label>
+																<input type="email" name="name" value="" class="form-control" placeholder="Nhập Email" style="border-color:green; color:green" />
+															</div>
+															<div class="mb-3">
+																<label class="form-label">Mật khẩu</label>
+																<input type="password" name="name" value="" class="form-control" placeholder="Nhập mật khẩu" style="border-color:green; color:green" />
+															</div>
+															<div class="mb-3">
+																<label class="form-label">Mật khẩu</label>
+																<input type="text" name="name" value="" class="form-control" placeholder="Nhập mã OTP" style="border-color:green; color:green" />
+															</div>
+															@* <div class="mb-3 form-check">
+															<input type="checkbox" class="form-check-input" id="exampleCheck1">
+															<label class="form-check-label" for="exampleCheck1">Check me out</label>
+															</div> *@
+															<div class="mb-3 d-flex justify-content-around">
+																<button type="submit" class="btn btn-success w-50">Đăng Ký</button>
+															</div>
+														</form>
+
+													</div>
+												</div>
+												@*  <div class="modal-header">
+												<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+												...
+												</div>
+												<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary">Save changes</button>
+												</div> *@
+											</div>
+										</div>
+									</div>
+
 									<img class="icon" src="~/IMG/user.png" alt="User" />
-								</div>
-								<div class="icon-container">
-									<a href="/Account/Index">Tài khoản</a>
 								</div>
 							</div>
 						</li>
@@ -119,7 +191,8 @@
 
 	</header>
 	<article>
-		
+		<img src="~/IMG/Frame 21.png" style="width:100%" />
+		<img src="/IMG//Rectangle 192.png" style="width:100%; margin-top:30px;margin-bottom:30px;" />
 		<main role="main" class="pb-3">
 			@RenderBody()
 		</main>
